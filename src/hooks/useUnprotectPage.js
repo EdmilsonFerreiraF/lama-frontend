@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useHistory } from 'react-router-dom';
-import { goToLogin, goToRecipesFeed } from '../routes/coordinator';
 
 
 export const useUnprotectPage = () => {
@@ -9,9 +8,6 @@ export const useUnprotectPage = () => {
     useEffect(() => {
         const token = window.localStorage.getItem("token")
 
-        if (token) {
-            goToRecipesFeed(history)
-        }
     }, [history])
 
 }
