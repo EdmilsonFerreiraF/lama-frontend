@@ -24,6 +24,7 @@ const Login = () => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
+        
         login(form, history, loggedContext.setLogged)
     }
 
@@ -75,7 +76,7 @@ const Login = () => {
                         Login
                     </ButtonContainer>
                     <LoginSpanContainer>
-                    <Typography variant="body">
+                    <Typography variant="body2">
                         Don't have an account yet?
                     </Typography>
                     <ButtonContainer

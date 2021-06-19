@@ -11,7 +11,7 @@ import MainAppBar from './components/MainAppBar/MainAppBar'
 import LoggedContext from './context/LoggedContex';
 
 const Container = styled.div`
-  padding-top: 64px;
+  padding-top: 125px;
 `
 
 const App = () => {

@@ -26,7 +26,7 @@ const SearchBar = () => {
     return(
         <SearchBarContainer>
             <SearchIconContainer>
-                <SearchIcon aria-label="deletar"
+                <SearchIcon
                 onClick={handleSubmission}/>
             </SearchIconContainer>
             

@@ -15,7 +15,7 @@ const Signup = () => {
     const history = useHistory()
     const loggedContext = useContext(LoggedContext)
 
-    const { form, onChange } = useForm({ name: "", email: "", password: "" })
+    const { form, onChange } = useForm({ name: "", nickname: "", email: "", password: "" })
 
     const handleInputChange = (event) => {
         const {value, name} = event.target
@@ -97,7 +97,7 @@ const Signup = () => {
                         Signup
                     </ButtonContainer>
                     <LoginSpanContainer>
-                    <Typography variant="body">
+                    <Typography variant="body2">
                             Is already registered?
                         </Typography>
                         <ButtonContainer

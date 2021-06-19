@@ -9,3 +9,7 @@ export const goToLogin = (history) => {
 export const goToIndex = (history) => {
     history.push('/')
 }
+
+export const goToMusicPaylists = (history) => {
+    history.push('/music')
+}

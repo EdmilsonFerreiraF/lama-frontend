@@ -32,7 +32,7 @@ const MainAppBar = () => {
             <LogoContainer src={logo} onClick={handleLogoButton}/>
             <ButtonsContainer>
               <Button color="inherit" onClick={handleLoginOrLogoutClick}>
-                {loggedContext.logged ? "Signup" : "Login"}
+                {loggedContext.logged ? "Logout" : "Login"}
               </Button>
               <SearchBar />
             </ButtonsContainer>
