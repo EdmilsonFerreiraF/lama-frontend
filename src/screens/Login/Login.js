@@ -1,21 +1,19 @@
 import React, { useContext } from 'react';
+import {useForm} from "../../hooks/useForm"
+import { login } from '../../services/user';
+import {TextField, Typography} from '@material-ui/core'
+import logo from '../../assets/logo.png'
+import { FormContainer, LoginContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, LogoContainer, InputLabelContainer, LoginSpanContainer } from './styles';
 import { useHistory } from 'react-router-dom';
-import { TextField, Typography } from '@material-ui/core';
-import { signup } from "../../services/user"
-import { useForm } from "../../hooks/useForm"
 import { useUnprotectPage } from '../../hooks/useUnprotectPage';
 import LoggedContext from '../../context/LoggedContex';
-import { FormContainer, SignupContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, LogoContainer, InputLabelContainer, LoginSpanContainer } from './styles';
-import logo from '../../assets/logo.png'
-import { goToLogin, goToIndex } from '../../routes/coordinator'
+import { goToSignup, goToIndex } from '../../routes/coordinator'
 
-const Signup = () => {
+const Login = () => {
     // useUnprotectPage()
-
     const history = useHistory()
     const loggedContext = useContext(LoggedContext)
-
-    const { form, onChange } = useForm({ name: "", email: "", password: "" })
+    const {form, onChange} = useForm({email: "", password: ""})
 
     const handleInputChange = (event) => {
         const {value, name} = event.target
@@ -25,49 +23,29 @@ const Signup = () => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        
-        signup(form, history, loggedContext.setLogged)
+        login(form, history, loggedContext.setLogged)
     }
 
-    const handleLoginButton = () => {
-        goToLogin(history)
+    const handleSignupButton = () => {
+        goToSignup(history)
     }
 
     const handleLogoButton = () => {
         goToIndex(history)
     }
 
-    return (
-        <SignupContainer>
+    return(
+            <LoginContainer>
             <LogoContainer src={logo} onClick={handleLogoButton}/>
-
             <TitleContainer variant="h3" component="h1">
-                Signup
+                Login
             </TitleContainer>
 
-            <SubtitleContainer variant="h4" component="h2">
+            <SubtitleContainer variant="h5" component="h2">
                 Create a new account
             </SubtitleContainer>
 
             <FormContainer onSubmit={handleSubmission} >
-                <InputLabelContainer>Name</InputLabelContainer>
-                <TextField 
-                    label="Name"
-                    variant="filled"
-                    name="name"
-                    value={form.name}
-                    onChange={handleInputChange}
-                />
-
-                <InputLabelContainer>Nickname</InputLabelContainer>
-                <TextField 
-                    label="Nickname"
-                    variant="filled"
-                    name="nickname"
-                    value={form.nickname}
-                    onChange={handleInputChange}
-                />
-
                 <InputLabelContainer>Email</InputLabelContainer>
                 <TextField 
                     label="E-mail"
@@ -87,31 +65,30 @@ const Signup = () => {
                     value={form.password}
                     onChange={handleInputChange}
                 />
-                
                 <RegisterContainer>
                     <ButtonContainer
                         variant="contained"
                         color="primary"
                         type="submit"
                     >
-                        Signup
+                        Login
                     </ButtonContainer>
                     <LoginSpanContainer>
                     <Typography variant="body">
-                            Is already registered?
+                            Don't have an account yet?
                         </Typography>
                         <ButtonContainer
                             variant="outlined"
                             color="primary"
-                            onClick={() => handleLoginButton(history)}
+                            onClick={() => handleSignupButton(history)}
                         >
-                            Login
+                            Sign up
                         </ButtonContainer>
                     </LoginSpanContainer>
                 </RegisterContainer>
             </FormContainer>
-        </SignupContainer>
+        </LoginContainer>
     )
 }
 
-export default Signup;
+export default Login;

@@ -1,7 +1,23 @@
 import styled from "styled-components"
 import { Typography, Button, InputLabel } from '@material-ui/core';
 
-export const SignupContainer = styled.div`
+// export const LoginContainer = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     width: 85vw;
+//     max-width: 465px;
+//     margin: 0 auto;
+// `
+
+// export const FormContainer = styled.form`
+//     display: flex;
+//     flex-direction: column;
+//     height: 24vh;
+//     justify-content: space-around;
+//     margin-bottom: 15px;
+// `
+
+export const LoginContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 85vw;
@@ -23,8 +39,8 @@ export const LogoContainer = styled.img`
 export const FormContainer = styled.form`
     display: grid;
     grid: auto/1fr 5fr;
-    align-items: center;
     grid-gap: 35px 15px;
+    align-items: center;
 
     @media screen and (max-width: 770px) {
         display: flex;
@@ -65,7 +81,6 @@ export const RegisterContainer = styled.div`
     justify-content: space-evenly;
     grid-area: 5/1/5/3;
     align-items: flex-end;
-    margin: 70px 0 0;
 
     @media screen and (max-width: 850px) {
         margin: 30px 0 0;
