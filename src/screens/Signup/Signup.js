@@ -10,7 +10,7 @@ import logo from '../../assets/logo.png'
 import { goToLogin, goToIndex } from '../../routes/coordinator'
 
 const Signup = () => {
-    // useUnprotectPage()
+    useUnprotectPage()
 
     const history = useHistory()
     const loggedContext = useContext(LoggedContext)

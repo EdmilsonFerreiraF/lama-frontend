@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
 import Router from './routes/Router';
+import { BrowserRouter } from 'react-router-dom'
+import './App.css'
+import styled from 'styled-components'
+
 import { ThemeProvider } from '@material-ui/core/styles'
-import { StylesProvider } from '@material-ui/core/styles';
 
 import theme from './constants/theme';
+import MainAppBar from './components/MainAppBar/MainAppBar'
 import LoggedContext from './context/LoggedContex';
-import './App.css'
+
+const Container = styled.div`
+  padding-top: 64px;
+`
 
 const App = () => {
   const [logged, setLogged] = useState(localStorage.getItem("token") ? true : false)
@@ -15,13 +21,14 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <StylesProvider injectFirst>
       <BrowserRouter>
         <LoggedContext.Provider value={loggedContext} >
-          <Router />
+          <MainAppBar />
+          <Container>
+            <Router />
+          </Container>
         </LoggedContext.Provider>
       </BrowserRouter>
-      </StylesProvider>
     </ThemeProvider>
   );
 }

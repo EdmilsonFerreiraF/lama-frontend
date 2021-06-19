@@ -1,6 +1,5 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
-
 
 export const useUnprotectPage = () => {
     const history = useHistory()
@@ -9,5 +8,4 @@ export const useUnprotectPage = () => {
         const token = window.localStorage.getItem("token")
 
     }, [history])
-
 }

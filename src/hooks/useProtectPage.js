@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { useHistory } from 'react-router-dom';
 import { goToLogin } from '../routes/coordinator';
 
-
 export const useProtectPage = () => {
     const history = useHistory()
 
@@ -13,5 +12,4 @@ export const useProtectPage = () => {
             goToLogin(history)
         }
     }, [history])
-
 }

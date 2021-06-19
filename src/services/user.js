@@ -23,3 +23,11 @@ export const signup = (body, history, setLogged) => {
     })
 }
 
+export const search = (body, history, setLogged) => {
+    axios.get(`${BASE_URL}/search`, body).then(response => {
+        localStorage.getItem("token", response.data.token)
+        // goToMusicPaylists(history)
+    }).catch(error => {
+        console.log(error.message)
+    })
+}
