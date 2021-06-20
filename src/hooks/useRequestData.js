@@ -9,7 +9,7 @@ export function useRequestData(url, initialState) {
     
     axios.get(url, {
         headers: {
-            Authorization: token
+          Authorization: token
         }
     }).then((response) => {
         setData(response.data);

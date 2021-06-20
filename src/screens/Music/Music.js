@@ -1,5 +1,4 @@
 import React from 'react';
-import ManageMusic from '../../components/ManageMusic/ManageMusic';
 import { useUnprotectPage } from '../../hooks/useUnprotectPage';
 
 const Music = () => {
@@ -7,7 +6,6 @@ const Music = () => {
 
     return (
         <div>
-            <ManageMusic />
         </div>
     )
 }

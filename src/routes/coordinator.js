@@ -10,6 +10,14 @@ export const goToIndex = (history) => {
     history.push('/')
 }
 
-export const goToMusicPaylists = (history) => {
+export const goToManageMusic = (history) => {
     history.push('/music')
+}
+
+export const goToCreateMusic = (history) => {
+    history.push('/music/create')
+}
+
+export const goToBrowseMusic = (history) => {
+    history.push('/music/all')
 }
