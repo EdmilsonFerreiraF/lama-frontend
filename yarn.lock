@@ -7860,13 +7860,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs@npm:^0.0.1-security":
-  version: 0.0.1-security
-  resolution: "fs@npm:0.0.1-security"
-  checksum: d23d3c0dd42fd11508e5f8d265375c676816adf398f61bfc3e2635e6e8ca323fd1f530d5dd5f87e4fca54296efb5ddf8a382b99f1ac243ac0a8b4b1cae8f5fac
-  languageName: node
-  linkType: hard
-
 fsevents@^1.2.7:
   version: 1.2.13
   resolution: "fsevents@npm:1.2.13"
@@ -10403,7 +10396,6 @@ fsevents@^1.2.7:
     eslint-plugin-react-hooks: ^4.2.0
     fork-ts-checker-webpack-plugin: ^6.2.12
     form-data: ^4.0.0
-    fs: ^0.0.1-security
     react: ^17.0.2
     react-datepicker: ^4.1.1
     react-dom: ^17.0.2

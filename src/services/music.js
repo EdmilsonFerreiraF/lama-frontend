@@ -8,7 +8,7 @@ export const createMusic = (body, history) => {
     axios.post(`${BASE_URL}/music/create`, body, {
         headers: {
             Authorization: token,
-            "Content-Type": "multipart/form-data"
+            "Content-Type": `multipart/form-data; boundary=${body._boundary}`
         }
     }).then((response) => {
         console.log(response)

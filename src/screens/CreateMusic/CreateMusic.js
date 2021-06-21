@@ -17,7 +17,7 @@ const CreateMusic = () => {
     const filesElement = useRef(null);
     const formData = new FormData();
 
-    const { form, onChange } = useForm({ title: "", author: "", file: "", date: new Date(), genre: "", album: "" })
+    const { form, onChange } = useForm({ title: "", file: "", date: new Date(), genre: "", album: "" })
 
     const handleInputChange = (event) => {
         const {value, name} = event.target
@@ -73,20 +73,11 @@ const CreateMusic = () => {
                     onChange={handleInputChange}
                 />
 
-                <InputLabelContainer>Author</InputLabelContainer>
-                <TextField 
-                    label="Author"
-                    variant="filled"
-                    name="author"
-                    value={form.author}
-                    onChange={handleInputChange}
-                />
-
                 <InputLabelContainer>Date</InputLabelContainer>
                 <DatePicker selected={form.date} onChange={(date) => handleDateInput(date)} />
 
                 <InputLabelContainer>File</InputLabelContainer>
-                <input type="file" ref={filesElement} />
+                <input type="file" name="file" ref={filesElement} />
 
                 <InputLabelContainer>Genre</InputLabelContainer>
                 <TextField  
