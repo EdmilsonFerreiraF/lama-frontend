@@ -15,21 +15,22 @@ export const CreateMusicContainer = styled.div`
     }
 `
 
-export const LogoContainer = styled.img`
-    width: fit-content;
-    margin: auto;
-    cursor: pointer;
+// export const LogoContainer = styled.img`
+//     width: fit-content;
+//     margin: 40px auto;
+//     cursor: pointer;
     
-    @media screen and (max-width: 850px) {
-        max-width: 200px;
-    }
-`
+//     @media screen and (max-width: 850px) {
+//         max-width: 200px;
+//     }
+// `
 
 export const FormContainer = styled.form`
     display: grid;
     grid: auto/1fr 5fr;
     align-items: center;
     grid-gap: 35px 15px;
+    margin: 70px 0 0;
 
     @media screen and (max-width: 770px) {
         display: flex;
@@ -39,8 +40,9 @@ export const FormContainer = styled.form`
     }
 `
 export const TitleContainer = styled(Typography)`
-    margin: 40px;
     text-align: center;
+    margin: 0 0 40px;
+    font-size: 2.4rem;
 
     @media screen and (max-width: 850px) {
         font-size: 2em;
@@ -49,13 +51,12 @@ export const TitleContainer = styled(Typography)`
 `
 
 export const SubtitleContainer = styled(Typography)`
-    margin: 0 0 70px 0;
     text-align: center;
     box-sizing: content-box;
+    font-size: 1.3rem;
 
     @media screen and (max-width: 850px) {
-        margin: 10px 0 35px;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 `
 
@@ -70,11 +71,7 @@ export const RegisterContainer = styled.div`
     justify-content: space-evenly;
     grid-area: 8/1/8/3;
     align-items: flex-end;
-    margin: 70px 0 0;
-
-    @media screen and (max-width: 850px) {
-        margin: 30px 0 0;
-    }
+    margin: 20px 0 0;
 `
 
 export const LoginSpanContainer = styled.div`

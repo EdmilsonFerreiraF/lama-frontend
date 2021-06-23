@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 import styled from 'styled-components'
+
 import Router from './routes/Router';
 import theme from './constants/theme';
-import MainAppBar from './components/MainAppBar/MainAppBar'
 import LoggedContext from './context/LoggedContex';
+
+import MainAppBar from './components/MainAppBar/MainAppBar'
+
 import './App.css'
 
 const Container = styled.div`
-  padding-top: 125px;
+  padding: 120px 20px 40px 20px;
 `
 
 const App = () => {

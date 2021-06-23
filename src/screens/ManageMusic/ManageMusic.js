@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import AlbumIcon from '@material-ui/icons/Album';
+import { Box } from '@material-ui/core';
+
 import { goToBrowseMusic, goToCreateMusic } from '../../routes/coordinator';
-import { ManageMusicItem, BoxContainer, SubtitleContainer } from './styles';
+
+import { ManageMusicItem, BoxContainer, SubtitleContainer, MusicNoteIconContainer, AlbumIconContainer } from './styles';
 
 const ManageMusic = () => {
     const history = useHistory()
@@ -22,13 +22,13 @@ const ManageMusic = () => {
             <Box>
                 <SubtitleContainer variant="h5" component="h2">Create a new music</SubtitleContainer>
                 <ManageMusicItem onClick={handleCreateMusic}>
-                    <MusicNoteIcon style={{ fontSize: 250 }}/>
+                    <MusicNoteIconContainer/>
                 </ManageMusicItem>
             </Box>
             <Box>
                 <SubtitleContainer variant="h5" component="h2">Browse music</SubtitleContainer>
                 <ManageMusicItem onClick={handleBrowseMusic}>
-                    <AlbumIcon style={{ fontSize: 250 }}/>
+                    <AlbumIconContainer/>
                 </ManageMusicItem>
             </Box>
         </BoxContainer>

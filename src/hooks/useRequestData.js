@@ -15,6 +15,9 @@ export function useRequestData(url, initialState) {
         setData(response.data);
     }).catch((error) => {
         console.log(error.message);
+        if (error.message.includes("401")) {
+          localStorage.removeItem("token")
+        }
     });
 
   }, [url]);

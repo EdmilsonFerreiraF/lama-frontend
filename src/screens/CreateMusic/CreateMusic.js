@@ -3,15 +3,20 @@ import { useHistory } from 'react-router-dom';
 import { TextField, Typography } from '@material-ui/core';
 import FormData from 'form-data';
 import DatePicker from "react-datepicker";
+
 import { createMusic } from "../../services/music"
 import { useForm } from "../../hooks/useForm"
+import { useProtectPage } from '../../hooks/useProtectPage';
 import LoggedContext from '../../context/LoggedContex';
-import { goToLogin, goToIndex } from '../../routes/coordinator'
+import { goToIndex, goToLogin } from '../../routes/coordinator'
+
 import { FormContainer, CreateMusicContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, LogoContainer, InputLabelContainer, LoginSpanContainer } from './styles';
-import logo from '../../assets/logo.png'
 import "react-datepicker/dist/react-datepicker.css";
+import logo from '../../assets/logo.png'
 
 const CreateMusic = () => {
+    useProtectPage();
+
     const history = useHistory()
     const loggedContext = useContext(LoggedContext)
     const filesElement = useRef(null);
@@ -44,17 +49,15 @@ const CreateMusic = () => {
     }
 
     const handleLogoButton = () => {
-        goToIndex(history)
+        goToIndex(history);
     }
     
     const handleDateInput = (date) => {
         onChange(date, "date")
     }
-
+    
     return (
         <CreateMusicContainer>
-            <LogoContainer src={logo} onClick={handleLogoButton}/>
-
             <TitleContainer variant="h3" component="h1">
                 Create music
             </TitleContainer>
@@ -71,6 +74,14 @@ const CreateMusic = () => {
                     name="title"
                     value={form.title}
                     onChange={handleInputChange}
+                />
+
+                <InputLabelContainer>Author</InputLabelContainer>
+                <TextField 
+                    label="Me"
+                    variant="filled"
+                    name="author"
+                    disabled
                 />
 
                 <InputLabelContainer>Date</InputLabelContainer>
@@ -105,21 +116,8 @@ const CreateMusic = () => {
                         color="primary"
                         type="submit"
                     >
-                        CreateMusic
+                        Create
                     </ButtonContainer>
-                    <LoginSpanContainer>
-                    <Typography variant="body2">
-                        Is already registered?
-                    </Typography>
-
-                    <ButtonContainer
-                        variant="outlined"
-                        color="primary"
-                        onClick={() => handleLoginButton(history)}
-                    >
-                        Login
-                    </ButtonContainer>
-                    </LoginSpanContainer>
                 </RegisterContainer>
             </FormContainer>
         </CreateMusicContainer>

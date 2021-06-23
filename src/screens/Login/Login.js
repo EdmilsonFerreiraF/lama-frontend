@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { TextField, Typography } from '@material-ui/core'
+
 import { useForm } from "../../hooks/useForm"
 import { useUnprotectPage } from '../../hooks/useUnprotectPage';
 import LoggedContext from '../../context/LoggedContex';
 import { login } from '../../services/user';
 import { goToSignup, goToIndex } from '../../routes/coordinator'
+
 import { FormContainer, LoginContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, LogoContainer, InputLabelContainer, LoginSpanContainer } from './styles';
 import logo from '../../assets/logo.png'
 
@@ -14,6 +16,7 @@ const Login = () => {
 
     const history = useHistory()
     const loggedContext = useContext(LoggedContext)
+
     const { form, onChange } = useForm({ email: "", password: "" })
 
     const handleInputChange = (event) => {
@@ -25,7 +28,7 @@ const Login = () => {
     const handleSubmission = (event) => {
         event.preventDefault()
         
-        login(form, history, loggedContext.setLogged)
+        login(form, history, loggedContext.setLogged);
     }
 
     const handleSignupButton = () => {
@@ -44,7 +47,7 @@ const Login = () => {
                 </TitleContainer>
 
                 <SubtitleContainer variant="h5" component="h2">
-                    Create a new account
+                    Sign in your account
                 </SubtitleContainer>
 
                 <FormContainer onSubmit={handleSubmission}>
@@ -68,24 +71,24 @@ const Login = () => {
                         onChange={handleInputChange}
                     />
                     <RegisterContainer>
-                    <ButtonContainer
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                    >
-                        Login
-                    </ButtonContainer>
-                    <LoginSpanContainer>
-                    <Typography variant="body2">
-                        Don't have an account yet?
-                    </Typography>
-                    <ButtonContainer
-                        variant="outlined"
-                        color="primary"
-                        onClick={() => handleSignupButton(history)}
-                    >
-                        Sign up
-                    </ButtonContainer>
+                        <ButtonContainer
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                        >
+                            Login
+                        </ButtonContainer>
+                        <LoginSpanContainer>
+                        <Typography variant="body2">
+                            Don't have an account yet?
+                        </Typography>
+                        <ButtonContainer
+                            variant="outlined"
+                            color="primary"
+                            onClick={() => handleSignupButton(history)}
+                        >
+                            Sign up
+                        </ButtonContainer>
                     </LoginSpanContainer>
                 </RegisterContainer>
             </FormContainer>

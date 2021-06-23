@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { TextField, Typography } from '@material-ui/core';
+
 import { signup } from "../../services/user"
 import { useForm } from "../../hooks/useForm"
 import { useUnprotectPage } from '../../hooks/useUnprotectPage';
 import LoggedContext from '../../context/LoggedContex';
+import { goToLogin, goToIndex } from '../../routes/coordinator'
+
 import { FormContainer, SignupContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, LogoContainer, InputLabelContainer, LoginSpanContainer } from './styles';
 import logo from '../../assets/logo.png'
-import { goToLogin, goToIndex } from '../../routes/coordinator'
 
 const Signup = () => {
     useUnprotectPage()
@@ -45,7 +47,7 @@ const Signup = () => {
                 Signup
             </TitleContainer>
 
-            <SubtitleContainer variant="h4" component="h2">
+            <SubtitleContainer variant="h5" component="h2">
                 Create a new account
             </SubtitleContainer>
 
@@ -96,9 +98,10 @@ const Signup = () => {
                     >
                         Signup
                     </ButtonContainer>
+                    
                     <LoginSpanContainer>
-                    <Typography variant="body2">
-                            Is already registered?
+                        <Typography variant="body2">
+                            Already registered?
                         </Typography>
                         <ButtonContainer
                             variant="outlined"

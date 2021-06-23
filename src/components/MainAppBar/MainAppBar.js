@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { AppBar, Button } from '@material-ui/core'
+
 import LoggedContext from '../../context/LoggedContex'
-import SearchBar from '../SearchBar/SearchBar'
 import { goToLogin, goToIndex } from '../../routes/coordinator'
 import { ButtonsContainer, LogoContainer, ToolbarContainer } from "./styles"
 import logo from '../../assets/logo.png'
+
+import SearchBar from '../SearchBar/SearchBar'
 
 const MainAppBar = () => {
     const history = useHistory()

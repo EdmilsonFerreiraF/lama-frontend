@@ -6025,7 +6025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.2.2":
+"deepmerge@npm:^4.0.0, deepmerge@npm:^4.2.2":
   version: 4.2.2
   resolution: "deepmerge@npm:4.2.2"
   checksum: 85abf8e0045ee280996e7d2396979c877ef0741e413b716e42441110e0a83ac08098b2a49cea035510060bf667c0eae3189b2a52349f5fa4b000c211041637b1
@@ -8380,6 +8380,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"howler@npm:^2.2.0":
+  version: 2.2.1
+  resolution: "howler@npm:2.2.1"
+  checksum: 352ea4901aed375f5001f0a2711b724097ff30d1a8410cb259909373c6d704b750a497234cc71803979876ad3e7b29f43a61282b61ce39358c9fd9e7d0a34a24
+  languageName: node
+  linkType: hard
+
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"
@@ -10399,7 +10406,9 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-datepicker: ^4.1.1
     react-dom: ^17.0.2
+    react-howler: ^5.0.0
     react-is: ^17.0.2
+    react-player: ^2.9.0
     react-router-dom: ^5.2.0
     react-scripts: ^4.0.3
     styled-components: ^5.3.0
@@ -10490,6 +10499,13 @@ fsevents@^1.2.7:
     pify: ^3.0.0
     strip-bom: ^3.0.0
   checksum: 692f33387be2439e920e394a70754499c22eabe567f55fee7c0a8994c050e27360c1b39c5375d214539ebb7d609d28e69f6bd6e3c070d30bc202c99289e27f96
+  languageName: node
+  linkType: hard
+
+"load-script@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "load-script@npm:1.0.0"
+  checksum: 9f907ee20dfe8068af210be73a072dd61a287566a23b5666b9c6b9957e66eb33cc7c6a790308cf307c373d7ff75265ab1dde779c3fff90d65535fb3a1c0a167a
   languageName: node
   linkType: hard
 
@@ -10812,6 +10828,13 @@ fsevents@^1.2.7:
   dependencies:
     fs-monkey: 1.0.3
   checksum: 3d58b59fd574723d072f25f541c5d1080212129d49669a41f5f6b6da814cda040d7f47ddd8c623550d49c01c24853c7e07f798a00db6510236b724ed476a9025
+  languageName: node
+  linkType: hard
+
+"memoize-one@npm:^5.1.1":
+  version: 5.2.1
+  resolution: "memoize-one@npm:5.2.1"
+  checksum: 6b7dab7d8d9dca696d500dbc7f6b1445cbc4168d8208ee2746dd1a7f75378445d9bc6a2def7868afee81c87e630294456310f33f3f1eb738f69d748c797d87d5
   languageName: node
   linkType: hard
 
@@ -13184,7 +13207,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.6, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -13488,6 +13511,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-howler@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-howler@npm:5.0.0"
+  dependencies:
+    howler: ^2.2.0
+    prop-types: ^15.5.6
+  checksum: c9ae758ef933b8597dc34b4eaf1d59856b997d5d8ad03939e1f19e0465660646e9055f1377bca0bf394218f7c2dd077f4b4785280d9b9f1bad76f98db9547ed9
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.6.0, react-is@npm:^16.7.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -13516,6 +13549,21 @@ fsevents@^1.2.7:
     react: ^15.5.x || ^16.x || ^17.x
     react-dom: ^15.5.x || ^16.x || ^17.x
   checksum: 7c201f204532908cd89e4b2d814f643111fba0c258cf3c17036b0aa1dd819d84d956bd80fc4aa871008fbda9e66dbcc394b76a88e730cc1b28a2f9338db5daad
+  languageName: node
+  linkType: hard
+
+"react-player@npm:^2.9.0":
+  version: 2.9.0
+  resolution: "react-player@npm:2.9.0"
+  dependencies:
+    deepmerge: ^4.0.0
+    load-script: ^1.0.0
+    memoize-one: ^5.1.1
+    prop-types: ^15.7.2
+    react-fast-compare: ^3.0.1
+  peerDependencies:
+    react: ">=16.6.0"
+  checksum: 32016230af242c472c266aea491621b8cb319239880e21b5d4dff95815d4dbc517bb47f0ca3a57ef9b4dd3e22087c17cd66e23072768584902069d16b5d70b63
   languageName: node
   linkType: hard
 

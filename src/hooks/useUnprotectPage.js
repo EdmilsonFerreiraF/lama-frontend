@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
+
 import { goToBrowseMusic } from '../routes/coordinator';
 
 export const useUnprotectPage = () => {

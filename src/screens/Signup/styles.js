@@ -12,11 +12,11 @@ export const SignupContainer = styled.div`
 
 export const LogoContainer = styled.img`
     width: fit-content;
-    margin: auto;
     cursor: pointer;
-    
+    margin: 0 auto 40px auto;
+
     @media screen and (max-width: 850px) {
-        max-width: 200px;
+        amx-width: 200px;
     }
 `
 
@@ -25,6 +25,7 @@ export const FormContainer = styled.form`
     grid: auto/1fr 5fr;
     align-items: center;
     grid-gap: 35px 15px;
+    margin: 70px 0 0;
 
     @media screen and (max-width: 770px) {
         display: flex;
@@ -34,7 +35,7 @@ export const FormContainer = styled.form`
     }
 `
 export const TitleContainer = styled(Typography)`
-    margin: 40px;
+    margin: 0 0 40px;
     text-align: center;
 
     @media screen and (max-width: 850px) {
@@ -44,12 +45,10 @@ export const TitleContainer = styled(Typography)`
 `
 
 export const SubtitleContainer = styled(Typography)`
-    margin: 0 0 70px 0;
     text-align: center;
     box-sizing: content-box;
 
     @media screen and (max-width: 850px) {
-        margin: 10px 0 35px;
         font-size: 1.4rem;
     }
 `
@@ -65,11 +64,7 @@ export const RegisterContainer = styled.div`
     justify-content: space-evenly;
     grid-area: 5/1/5/3;
     align-items: flex-end;
-    margin: 70px 0 0;
-
-    @media screen and (max-width: 850px) {
-        margin: 30px 0 0;
-    }
+    margin: 20px 0 0;
 `
 
 export const LoginSpanContainer = styled.div`
