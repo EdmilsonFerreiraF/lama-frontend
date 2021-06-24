@@ -12,8 +12,9 @@ import MusicItem from '../../components/MusicItem/MusicItem';
 import { FabStyled, BrowseMusicContainer } from './styles';
 
 const BrowseMusic = () => {
-    const history = useHistory()
     useProtectPage()
+    
+    const history = useHistory()
 
     const music = useRequestData(`${BASE_URL}/music/all`, [])
     return (

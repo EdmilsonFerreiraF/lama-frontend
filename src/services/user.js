@@ -10,7 +10,7 @@ export const login = (body, history, setLogged) => {
         setLogged(true)
         goToBrowseMusic(history)
     }).catch(() => {
-        alert("Email or password incorret")
+        alert("Email or password invalid")
     })
 }
 
@@ -20,15 +20,6 @@ export const signup = (body, history, setLogged) => {
         
         setLogged(true)
         goToManageMusic(history)
-    }).catch(error => {
-        console.log(error.message)
-    })
-}
-
-export const search = (body, history, setLogged) => {
-    axios.get(`${BASE_URL}/search`, body).then(response => {
-        localStorage.getItem("token", response.data.token)
-        // goToManageMusic(history)
     }).catch(error => {
         console.log(error.message)
     })

@@ -7,7 +7,7 @@ import Error from '../screens/Error/Error'
 import ManageMusic from '../screens/ManageMusic/ManageMusic';
 import CreateMusic from '../screens/CreateMusic/CreateMusic';
 import BrowseMusic from '../screens/BrowseMusic/BrowseMusic';
-import MusicDetails from '../screens/MusicDetails/MusicDetails';
+import Search from '../screens/Search/Search';
 
 const Router = () => {
     return (
@@ -17,7 +17,7 @@ const Router = () => {
             <Route exact path={["/music", "/"]} component={ManageMusic}/>
             <Route exact path={"/music/create"} component={CreateMusic}/>
             <Route exact path={"/music/all"} component={BrowseMusic}/>
-            <Route exact path={"/music/:id"} component={MusicDetails}/>
+            <Route exact path={"/music/title/:title"} component={Search}/>
             <Error/>
         </Switch>
     )

@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { TextField } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
 
 import { useForm } from "../../hooks/useForm"
-import { search } from '../../services/user';
-import LoggedContext from '../../context/LoggedContex';
+import { goToSearch } from '../../routes/coordinator';
 
 import { SearchIconContainer, SearchBarContainer } from './styles';
 
 const SearchBar = () => {
     const history = useHistory()
-    const loggedContext = useContext(LoggedContext)
     const {form, onChange} = useForm({ search: "" })
 
     const handleInputChange = (event) => {
@@ -22,7 +20,7 @@ const SearchBar = () => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        search(form, history, loggedContext.setLogged)
+        goToSearch(history, form.search)
     }
 
     return(
@@ -33,12 +31,12 @@ const SearchBar = () => {
             </SearchIconContainer>
             
             <TextField  
-            label="Search"
-            variant="filled"                
-            type="search"
-            name="search"
-            value={form.search}
-            onChange={handleInputChange}
+                label="Search"
+                variant="filled"                
+                type="search"
+                name="search"
+                value={form.search}
+                onChange={handleInputChange}
             />
         </SearchBarContainer>
     )

@@ -15,16 +15,6 @@ export const CreateMusicContainer = styled.div`
     }
 `
 
-// export const LogoContainer = styled.img`
-//     width: fit-content;
-//     margin: 40px auto;
-//     cursor: pointer;
-    
-//     @media screen and (max-width: 850px) {
-//         max-width: 200px;
-//     }
-// `
-
 export const FormContainer = styled.form`
     display: grid;
     grid: auto/1fr 5fr;
@@ -72,13 +62,6 @@ export const RegisterContainer = styled.div`
     grid-area: 8/1/8/3;
     align-items: flex-end;
     margin: 20px 0 0;
-`
-
-export const LoginSpanContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-gap: 20px;
 `
 
 export const ButtonContainer = styled(Button)`

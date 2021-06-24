@@ -1,7 +1,7 @@
 import axios from "axios"
 
 import { BASE_URL } from "../constants/apiConstants"
-import { goToManageMusic } from "../routes/coordinator"
+import { goToBrowseMusic } from "../routes/coordinator"
 
 export const createMusic = (body, history) => {
     const token = localStorage.getItem("token")
@@ -13,9 +13,9 @@ export const createMusic = (body, history) => {
         }
     }).then((response) => {
         console.log(response)
-        goToManageMusic(history)
+        goToBrowseMusic(history)
     }).catch(error => {
-        alert("Email ou senha inválidos!")
+        alert("Email or password invalid")
         console.log(error.message)
     })
 }

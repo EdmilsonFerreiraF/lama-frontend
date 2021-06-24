@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { TextField, Typography } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import FormData from 'form-data';
 import DatePicker from "react-datepicker";
 
@@ -8,11 +8,9 @@ import { createMusic } from "../../services/music"
 import { useForm } from "../../hooks/useForm"
 import { useProtectPage } from '../../hooks/useProtectPage';
 import LoggedContext from '../../context/LoggedContex';
-import { goToIndex, goToLogin } from '../../routes/coordinator'
 
-import { FormContainer, CreateMusicContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, LogoContainer, InputLabelContainer, LoginSpanContainer } from './styles';
+import { FormContainer, CreateMusicContainer, TitleContainer, SubtitleContainer, ButtonContainer, RegisterContainer, InputLabelContainer } from './styles';
 import "react-datepicker/dist/react-datepicker.css";
-import logo from '../../assets/logo.png'
 
 const CreateMusic = () => {
     useProtectPage();
@@ -20,6 +18,7 @@ const CreateMusic = () => {
     const history = useHistory()
     const loggedContext = useContext(LoggedContext)
     const filesElement = useRef(null);
+    
     const formData = new FormData();
 
     const { form, onChange } = useForm({ title: "", file: "", date: new Date(), genre: "", album: "" })
@@ -42,14 +41,6 @@ const CreateMusic = () => {
         }
 
         createMusic(formData, history, loggedContext.setLogged)
-    }
-
-    const handleLoginButton = () => {
-        goToLogin(history)
-    }
-
-    const handleLogoButton = () => {
-        goToIndex(history);
     }
     
     const handleDateInput = (date) => {
