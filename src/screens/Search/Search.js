@@ -33,6 +33,7 @@ const Search = () => {
                 {music && music && music.map(music => (
                     <MusicItem 
                         key={music.id}
+                        id={music.id}
                         title={music.title}
                         author={music.author}
                     />

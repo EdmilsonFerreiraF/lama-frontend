@@ -22,6 +22,10 @@ export const goToBrowseMusic = (history) => {
     history.push('/music/all')
 }
 
+export const goToMusicDetails = (history, id) => {
+    history.push(`/music/${id}`)
+}
+
 export const goToSearch = (history, title) => {
     history.push(`/music/title/${title}`)
 }

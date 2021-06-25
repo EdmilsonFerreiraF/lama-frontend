@@ -11,11 +11,23 @@ export const createMusic = (body, history) => {
             Authorization: token,
             "Content-Type": `multipart/form-data; boundary=${body._boundary}`
         }
-    }).then((response) => {
-        console.log(response)
+    }).then(() => {
         goToBrowseMusic(history)
-    }).catch(error => {
+    }).catch(() => {
         alert("Email or password invalid")
-        console.log(error.message)
+    })
+}
+
+export const deleteMusic = (id, history) => {
+    const token = localStorage.getItem("token")
+
+    axios.delete(`${BASE_URL}/music/${id}`, {
+        headers: {
+            Authorization: token,
+        }
+    }).then(() => {
+        goToBrowseMusic(history)
+    }).catch(() => {
+        alert("Email or password invalid")
     })
 }

@@ -17,11 +17,13 @@ const BrowseMusic = () => {
     const history = useHistory()
 
     const music = useRequestData(`${BASE_URL}/music/all`, [])
+    
     return (
         <BrowseMusicContainer>
             {music && music && music.map(music => (
                  <MusicItem 
                     key={music.id}
+                    id={music.id}
                     title={music.title}
                     author={music.author}
                 />

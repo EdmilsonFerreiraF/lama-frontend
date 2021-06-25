@@ -16,7 +16,7 @@ export const LogoContainer = styled.img`
     margin: 0 auto 40px auto;
 
     @media screen and (max-width: 850px) {
-        amx-width: 200px;
+        max-width: 200px;
     }
 `
 
