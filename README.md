@@ -1,5 +1,5 @@
 <h1 align="center">
-    🔗 Music App</a> - Backend
+    🔗 Music App</a> - Frontend
 </h1>
 <h3>
     <a href="https://github.com/EdmilsonFerreiraF/lama-frontend">🔗 Frontend </a>
